@@ -4,10 +4,6 @@ import { CartContext } from '../context/CartContext'
 
 const Cart = () => {
     const cart = useContext(CartContext)
-    useEffect(()=> {
-        
-        console.log(cart)
-    }, [cart])
 
     return (
         <>

@@ -12,8 +12,7 @@ export const Checkout = () => {
         setCheckoutResponse(data)
     }
     const config = {
-        url: "http://localhost:8080/#/",
-        apiKey: "e0f89d5328398b93634f56ba06c9474ec9388d5e",
+        apiKey: "a5270958935a3eb3cf6757c05bdba91a1606029c",
         type: "payment",
         cb: receiveResponse,
     }
@@ -33,7 +32,7 @@ export const Checkout = () => {
                     quantity: product.quantity
                 }
             })
-            tonderCheckout.setOrder({products: _tonderCart})
+            console.log(tonderCheckout.setOrder({products: _tonderCart}))
         }
         setOrder()
     }, [cart.items])
@@ -48,7 +47,9 @@ export const Checkout = () => {
             <div id="tonder-checkout">
             </div>
             <p>{checkoutResponse?.data?.status}</p>
-            <button onClick={()=>{ console.log(tonderCheckout.getUrlParams())}}>Get url params</button>
+            <button onClick={()=>{
+                console.log(tonderCheckout.getUrlParams())
+            }}>Get url params</button>
         </div>
     )
 }

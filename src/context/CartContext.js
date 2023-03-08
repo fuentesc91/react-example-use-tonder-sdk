@@ -98,7 +98,6 @@ export function CartProvider({children}) {
         removeOneFromCart,
         deleteFromCart,
         getTotalCost,
-        shippingCost: 60,
     }
 
     return (
