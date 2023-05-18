@@ -116,6 +116,7 @@ class InlineCheckout {
                 max-height: 0px;
                 overflow: hidden;
                 transition: max-height 0.5s ease-out;
+                max-width: 600px
             }
 
             .container-selected {
