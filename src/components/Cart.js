@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from 'react'
+import React, { useContext } from 'react'
 
 import { CartContext } from '../context/CartContext'
 
@@ -19,7 +19,7 @@ const Cart = () => {
                     )
                 })}
                 <div>
-                    Total: {cart.getTotalCost()}
+                    Total: <span id="cart-total">{cart.getTotalCost()}</span>
                 </div>
             </div>
         </>
