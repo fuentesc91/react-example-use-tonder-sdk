@@ -76,7 +76,6 @@ class InlineCheckout {
 
   injectCheckout() {
     const injectInterval = setInterval(() => {
-      console.log(document.querySelector("#tonder-checkout"));
       if (document.querySelector("#tonder-checkout")) {
         document.querySelector("#tonder-checkout").innerHTML = `
         <div class="container-tonder">
