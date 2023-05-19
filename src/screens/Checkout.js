@@ -4,7 +4,7 @@ import sdkIcons from "../assets/img/sdk-icons.png";
 
 export const Checkout = () => {
   const [selectedOption, setSelectedOption] = useState(null);
-  const [optionHidden, setOptionHidden] = useState(false);
+  const [optionHidden, setOptionHidden] = useState(true);
 
   const checkoutStyle = {
     marginTop: "2rem",
