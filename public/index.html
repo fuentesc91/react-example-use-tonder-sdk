@@ -44,15 +44,18 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-    <script src="inlinesdk.js"></script>
+    <script src="inlinesdk.js" ></script>
     <script>
-      const form = document.querySelector("#payment-form")
-      const apiKey = "f4ab1f9140ce5b17a1bbd0b62b7f949cdd18967b"
-      const totalElement = document.querySelector("#cart-total")
-      const inlineCheckout = new InlineCheckout({form: form, apiKey: apiKey, totalElementId: "cart-total"})
-      inlineCheckout.injectCheckout()
+      const form = document.querySelector("#payment-form");
+      const apiKey = "f4ab1f9140ce5b17a1bbd0b62b7f949cdd18967b";
+      const totalElement = document.querySelector("#cart-total");
+      const inlineCheckout = new InlineCheckout({
+        form: form,
+        apiKey: apiKey,
+        totalElementId: "cart-total",
+      });
+      inlineCheckout.injectCheckout();
       // inlineCheckout.fetchTonderData()
-
     </script>
   </body>
 </html>
