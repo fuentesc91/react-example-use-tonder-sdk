@@ -16,17 +16,32 @@ class InlineCheckout {
       },
     ];
     this.totalElementId = totalElementId;
-    this.firstName = customer.firstName || "Unknown";
-    this.lastName = customer.lastName || "Customer";
-    this.country = customer.country || "Mexico";
-    this.address = customer.address || "Unkown street";
-    this.city = customer.city || "Unkown";
-    this.state = customer.state || "Unkown";
-    this.postCode = customer.postCode || "00000";
-    this.email = customer.email || "customer@mail.com";
-    this.phone = customer.phone || "9999999999";
+    this.firstName = customer?.firstName || "Unknown";
+    this.lastName = customer?.lastName || "Customer";
+    this.country = customer?.country || "Mexico";
+    this.address = customer?.address || "Unkown street";
+    this.city = customer?.city || "Unkown";
+    this.state = customer?.state || "Unkown";
+    this.postCode = customer?.postCode || "00000";
+    this.email = customer?.email || "customer@mail.com";
+    this.phone = customer?.phone || "9999999999";
     this.form = form;
     this.radioName = radioName;
+
+    this.addScripts()
+  }
+
+  addScripts() {
+    const skyflow = document.createElement("script")
+    skyflow.src = "https://js.skyflow.com/v1/index.js"
+    const openPay1 = document.createElement("script")
+    openPay1.src = "https://openpay.s3.amazonaws.com/openpay.v1.min.js"
+    const openPay2 = document.createElement("script")
+    openPay2.src = "https://openpay.s3.amazonaws.com/openpay-data.v1.min.js"
+
+    document.head.appendChild(skyflow)
+    document.head.appendChild(openPay1)
+    document.head.appendChild(openPay2)
   }
 
   filtrarNumeros(cadena) {

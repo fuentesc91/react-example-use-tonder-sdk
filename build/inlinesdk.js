@@ -1,32 +1,47 @@
 class InlineCheckout {
-  constructor({ form, radioName, apiKey, totalElementId }) {
+  constructor({ form, radioName, apiKey, totalElementId, customer, items }) {
     this.baseUrlTonder = "https://stage.tonder.io/api/v1/";
     this.apiKeyTonder = apiKey;
     this.email = "customer@mail.com";
-    this.cartItemsTonder = [
+    this.cartItemsTonder = items || [
       {
         description: "Example",
         quantity: 1,
-        price_unit: 11,
+        price_unit: 1,
         discount: 0,
         taxes: 0,
-        product_reference: 11,
-        name: "Producto de prueba",
-        amount_total: 11,
+        product_reference: 1,
+        name: "Producto",
+        amount_total: 1,
       },
     ];
     this.totalElementId = totalElementId;
-    this.firstName = "Carlos";
-    this.lastName = "Fuentes";
-    this.country = "Mexico";
-    this.address = "Arco Tiberio 880";
-    this.city = "Zapopan";
-    this.state = "Jalisco";
-    this.postCode = "45130";
-    this.email = "fuentesc91@gmail.com";
-    this.phone = "3334632217";
+    this.firstName = customer?.firstName || "Unknown";
+    this.lastName = customer?.lastName || "Customer";
+    this.country = customer?.country || "Mexico";
+    this.address = customer?.address || "Unkown street";
+    this.city = customer?.city || "Unkown";
+    this.state = customer?.state || "Unkown";
+    this.postCode = customer?.postCode || "00000";
+    this.email = customer?.email || "customer@mail.com";
+    this.phone = customer?.phone || "9999999999";
     this.form = form;
     this.radioName = radioName;
+
+    this.addScripts()
+  }
+
+  addScripts() {
+    const skyflow = document.createElement("script")
+    skyflow.src = "https://js.skyflow.com/v1/index.js"
+    const openPay1 = document.createElement("script")
+    openPay1.src = "https://openpay.s3.amazonaws.com/openpay.v1.min.js"
+    const openPay2 = document.createElement("script")
+    openPay2.src = "https://openpay.s3.amazonaws.com/openpay-data.v1.min.js"
+
+    document.head.appendChild(skyflow)
+    document.head.appendChild(openPay1)
+    document.head.appendChild(openPay2)
   }
 
   filtrarNumeros(cadena) {
