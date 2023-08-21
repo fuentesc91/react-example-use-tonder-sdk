@@ -921,7 +921,7 @@ transform: rotate(360deg);
         },
         body: JSON.stringify(data),
       });
-      if (response.status === 200) {
+      if (response.status >= 200 && response.status <=299) {
         const jsonResponse = await response.json();
         return jsonResponse;
       } else {
@@ -941,8 +941,9 @@ transform: rotate(360deg);
         },
         body: JSON.stringify(data),
       });
-      if (response.status === 200) {
+      if (response.status >= 200 && response.status <= 299) {
         const jsonResponse = await response.json();
+        console.log(jsonResponse)
         return true;
       } else {
         return false;
